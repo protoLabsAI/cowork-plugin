@@ -1,6 +1,6 @@
 id: cowork
 name: Cowork (knowledge-work skill pack)
-version: 0.1.0
+version: 0.1.1
 description: >-
   The skill pack behind protoAgent's Cowork archetype (ADR 0083): original,
   clean-room office-document skills (Word, Excel, PowerPoint, PDF) that produce

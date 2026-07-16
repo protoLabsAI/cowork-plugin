@@ -1,60 +1,55 @@
 ---
 name: setup-cowork
-description: Guided first-run setup for the Cowork archetype — connect folders and tools, import existing Claude Code/Cowork state, try a document skill, set up a writing voice, and wire the first scheduled task.
+description: Conversational first-run companion for the Cowork archetype — verify the workspace is ready, import existing Claude Code/Cowork state, prove the setup on a real task, learn the operator's writing voice, and wire the first scheduled task. The mechanical setup (archetype, plugins, dependencies, folders) belongs to the setup wizard; this skill picks up where it leaves off.
 user_facing: true
 slash: setup-cowork
 ---
 
-# Cowork setup
+# Cowork first conversation
 
-Walk the operator from "fresh install" to "this already works like my
-workspace, but it's mine". Six steps, one at a time, every one skippable.
-Keep each message to a few sentences. If they wander into real work
-mid-setup, help with it, then pick up where you left off.
+The setup wizard already handled the mechanical work — archetype, bundle,
+persona. This skill is the part that has to happen *in conversation*: proving
+the setup on the operator's real work and personalizing it. One step at a
+time, every step skippable, a few sentences per message. If they detour into
+real work, help, then resume.
 
-## 1. Frame it
+## 1. Readiness check (silent, then one line)
 
-Two or three sentences: this agent handles multi-step knowledge work —
-reports, spreadsheets, decks, research — as real files, on their machine,
-with their choice of model. Skills run via `/`, plugins add capabilities,
-everything is inspectable. Then: "Let's take a few minutes to set it up."
+Before anything user-facing, verify the workspace is actually ready:
+document-library packages importable (try `execute_code` with a bare
+`import docx, openpyxl, pptx, pypdf`), fenced folders configured, Google
+plugin connected if enabled. Don't walk the operator through fixing gaps in
+chat — the console owns that. One line each, only for what's missing:
+dependencies → Settings ▸ Plugins ▸ cowork ▸ install-deps; folders →
+Settings ▸ Tools; Google → Settings ▸ Plugins. If everything's ready, say
+nothing about any of it and start at step 2.
 
-## 2. Folders
-
-Deliverables need somewhere to land. Ask which folders the agent should
-work in (Documents / Desktop / a projects dir), and have the operator wire
-them in Settings ▸ Tools (the fenced filesystem tools). State the contract
-plainly: those folders only, and never a permanent delete without asking.
-
-## 3. Import what they already have
+## 2. Import what they already have
 
 If the claude-bridge plugin is enabled, offer to look at their existing
 Claude Code/Cowork state: memory for context, and any **user-authored**
-skills worth migrating (Anthropic's own bundled skills are licensed to
-their services and are not imported — this pack's document skills replace
-them). Summarize what you find before importing anything; import only what
-they approve.
+skills worth migrating (Anthropic's bundled skills are licensed to their
+services and are never imported — this pack's document skills replace them).
+Summarize what you find before importing anything; import only what they
+approve.
 
-## 4. Connect their tools
+## 3. Prove it on their real work
 
-Inventory what's enabled (Gmail/Calendar/Drive via the Google plugin, notes,
-artifacts) and point them at Settings ▸ Plugins for whatever's missing. If
-`requires_pip` packages for the document skills aren't installed yet, have
-them run install-deps now — it's one click and everything downstream needs
-it.
+Ask for one genuine task — a messy folder, a spreadsheet that needs
+reconciling, a doc to draft — and run it end to end with the relevant
+document skill. Name the file you produced. This one deliverable teaches
+more than any tour.
 
-## 5. Prove it, then personalize it
+## 4. Writing voice
 
-Offer one real task from their actual work ("point me at a messy folder or
-a spreadsheet"), run it end to end with the relevant document skill, and
-name the file you produced. Then offer the writing-voice skill: what it
-does, that it takes two minutes, that nothing saves without review — and
-that skipping is fine (they can just ask later).
+Offer the writing-voice skill: it reads samples they choose to share, takes
+about two minutes, and nothing saves without their review. Skipping is fine
+— "whenever you want drafts to sound like you, just ask." If a profile
+already exists, say so and move on; never overwrite one.
 
-## 6. Wrap with the habit
+## 5. Wrap with the habit
 
 Show what recurring work looks like: "Anything we did today can run on a
 schedule — say 'every Friday' and it happens." If a natural candidate came
-up during setup, offer to schedule it now (schedule skill). Close with:
-type `/` to see skills, and ask for anything the way they'd ask a
-colleague.
+up, offer to schedule it now (schedule skill). Close: type `/` to see
+skills, and ask for anything the way they'd ask a colleague.
