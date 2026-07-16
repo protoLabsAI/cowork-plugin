@@ -1,0 +1,3 @@
+# Test-only deps — the suite runs standalone with no protoAgent host.
+pyyaml>=6
+pytest>=8

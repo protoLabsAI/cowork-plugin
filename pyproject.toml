@@ -1,0 +1,24 @@
+[project]
+name = "cowork-plugin"
+version = "0.1.0"
+description = "protoAgent skill pack for the Cowork archetype (ADR 0083): clean-room office-document skills + schedule/memory/writing-voice/setup habits."
+requires-python = ">=3.11"
+
+# No runtime pip deps of its own — the document libraries the SKILLS direct the
+# agent to use are declared in the manifest's requires_pip and installed by the
+# operator; the plugin module itself imports nothing beyond stdlib.
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+
+[tool.ruff]
+line-length = 120
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "W"]
+ignore = ["E402", "E501", "E702", "E731", "E741"]
+
+[tool.ruff.lint.per-file-ignores]
+"**/__init__.py" = ["F401"]
