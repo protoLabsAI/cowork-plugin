@@ -9,6 +9,7 @@ Cowork to a self-hosted agent whose deliverables are real files.
 | Skill | What it does |
 |---|---|
 | `docx` / `xlsx` / `pptx` / `pdf` | Produce and edit Word/Excel/PowerPoint/PDF deliverables via `execute_code` + the standard Python libraries |
+| `/daily-brief` | The day on one page — schedule with prep flags, who's waiting on you, work in flight, heads-ups — as a styled HTML artifact; schedulable on any cron cadence |
 | `schedule` | Distill the current session into a self-contained prompt and run it on any cron cadence or one-shot |
 | `consolidate-memory` | Reflective maintenance pass over long-term memory — merge, retire, sharpen |
 | `writing-voice` | Learn the operator's voice from samples they share; saved as a `my-writing-style` skill |

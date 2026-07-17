@@ -17,6 +17,7 @@ EXPECTED = {
     "consolidate-memory",
     "writing-voice",
     "setup-cowork",
+    "daily-brief",
 }
 
 
