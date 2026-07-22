@@ -51,3 +51,11 @@ file unless in-place was requested.
 
 Re-open and count slides; read back the titles. Report "12 slides, saved to
 <path>" — verified, not assumed.
+
+## Save it as a versioned artifact
+
+Once the file is written and verified, register it in the Artifact panel with
+`save_file_artifact(path, title=…)` when that tool is available (the artifact plugin, protoAgent
+v0.107.0+). It stores the bytes, shows a Download card with a readable preview (a slide outline), and keeps
+an edit history — pass the same `artifact_id` to save a later revision as v2/v3. Report the saved
+path *and* that it's in the panel. If the tool isn't available, just report the path.

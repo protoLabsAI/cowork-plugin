@@ -53,3 +53,11 @@ Keep the original untouched; name the output `<name>-clean.xlsx`.
 
 Re-open the saved file and spot-check: row count, a couple of cell values, a
 computed total. State the numbers you verified in the summary.
+
+## Save it as a versioned artifact
+
+Once the file is written and verified, register it in the Artifact panel with
+`save_file_artifact(path, title=…)` when that tool is available (the artifact plugin, protoAgent
+v0.107.0+). It stores the bytes, shows a Download card with a readable preview (a sheet table), and keeps
+an edit history — pass the same `artifact_id` to save a later revision as v2/v3. Report the saved
+path *and* that it's in the panel. If the tool isn't available, just report the path.
