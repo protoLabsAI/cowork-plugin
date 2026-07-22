@@ -1,6 +1,6 @@
 id: cowork
 name: Cowork (knowledge-work skill pack)
-version: 0.2.0
+version: 0.2.1
 description: >-
   The skill pack behind protoAgent's Cowork archetype (ADR 0083): original,
   clean-room office-document skills (Word, Excel, PowerPoint, PDF) that produce
@@ -23,11 +23,16 @@ config:
   output_dir: ""
 
 requires_pip:
-  - python-docx
-  - openpyxl
-  - python-pptx
-  - pypdf
-  - reportlab
+  # Optional tier (protoAgent #1954): the document skills lazy-import these and degrade with a
+  # readable error when a lib is absent, so a missing dep WARNS instead of refusing the whole
+  # plugin. That lets cowork install on the frozen desktop app — where pip-installing deps isn't
+  # possible (ADR 0058) — and the dep-free skills (writing-voice, schedule, daily-brief,
+  # consolidate-memory, setup-cowork) still work. On a server/Docker build these install normally.
+  - { pkg: python-docx, optional: true }
+  - { pkg: openpyxl,    optional: true }
+  - { pkg: python-pptx, optional: true }
+  - { pkg: pypdf,       optional: true }
+  - { pkg: reportlab,   optional: true }
 
 capabilities:
   network: []

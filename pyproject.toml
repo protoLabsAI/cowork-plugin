@@ -1,6 +1,6 @@
 [project]
 name = "cowork-plugin"
-version = "0.2.0"
+version = "0.2.1"
 description = "protoAgent skill pack for the Cowork archetype (ADR 0083): clean-room office-document skills + schedule/memory/writing-voice/setup habits."
 requires-python = ">=3.11"
 
