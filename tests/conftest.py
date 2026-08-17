@@ -23,9 +23,13 @@ class FakeRegistry:
     def __init__(self):
         self.config = {}
         self.skill_dirs = []
+        self.verifiers = {}
 
     def register_skill_dir(self, path):
         self.skill_dirs.append(path)
+
+    def register_goal_verifier(self, name, fn, description=""):
+        self.verifiers[name] = (fn, description)
 
 
 @pytest.fixture

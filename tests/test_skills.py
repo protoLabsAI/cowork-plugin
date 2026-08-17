@@ -18,6 +18,7 @@ EXPECTED = {
     "writing-voice",
     "setup-cowork",
     "daily-brief",
+    "drop-folder",
 }
 
 

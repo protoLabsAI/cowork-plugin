@@ -11,6 +11,7 @@ Cowork to a self-hosted agent whose deliverables are real files.
 | `docx` / `xlsx` / `pptx` / `pdf` | Produce and edit Word/Excel/PowerPoint/PDF deliverables via `execute_code` + the standard Python libraries |
 | `/daily-brief` | The day on one page — schedule with prep flags, who's waiting on you, work in flight, heads-ups — as a styled HTML artifact; schedulable on any cron cadence |
 | `schedule` | Distill the current session into a self-contained prompt and run it on any cron cadence or one-shot |
+| `drop-folder` | Turn a fenced folder into a drop zone — a watch (backed by this plugin's `cowork:folder_changed` verifier) notices arrivals/edits/deletions and runs a distilled follow-up |
 | `consolidate-memory` | Reflective maintenance pass over long-term memory — merge, retire, sharpen |
 | `writing-voice` | Learn the operator's voice from samples they share; saved as a `my-writing-style` skill |
 | `/setup-cowork` | Guided first-run: folders → import existing Claude Code/Cowork state (via claude-bridge) → connect tools → try a skill → voice → first schedule |
