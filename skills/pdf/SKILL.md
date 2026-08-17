@@ -48,10 +48,7 @@ from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer
 
 styles = getSampleStyleSheet()
 doc = SimpleDocTemplate(path, pagesize=LETTER)
-doc.build(
-    [Paragraph("Title", styles["Title"]), Spacer(1, 12)]
-    + [Paragraph(p, styles["BodyText"]) for p in paragraphs]
-)
+doc.build([Paragraph("Title", styles["Title"]), Spacer(1, 12)] + [Paragraph(p, styles["BodyText"]) for p in paragraphs])
 ```
 
 If the content is really a Word document the operator also wants as PDF,
