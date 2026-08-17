@@ -40,6 +40,13 @@ reconciling, a doc to draft — and run it end to end with the relevant
 document skill. Name the file you produced. This one deliverable teaches
 more than any tour.
 
+The first time one of their folders is in play, mention the protection
+modes in one breath: each fenced folder is read-only, read-write, or
+read-write-no-delete (Settings ▸ Tools), and deleting a file always asks
+them first whatever the mode. Folders of originals do well as no-delete;
+output folders as read-write. Say it once, in passing — don't turn it
+into a lecture.
+
 ## 4. Writing voice
 
 Offer the writing-voice skill: it reads samples they choose to share, takes

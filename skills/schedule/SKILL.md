@@ -42,6 +42,7 @@ so a mis-distilled prompt gets caught now, not at 6am.
 ## protoAgent advantages worth using
 
 Scheduled tasks here run on *this* machine: they can touch local folders,
-use any cron cadence, and their results land in the activity thread. Big
-recurring deliverables can also pair with a workflow recipe — mention it
-when a task outgrows a single prompt.
+use any cron cadence, and their results land in the activity thread — and
+are indexed into memory, so a later session can recall what any run
+produced. Big recurring deliverables can also pair with a workflow recipe
+— mention it when a task outgrows a single prompt.

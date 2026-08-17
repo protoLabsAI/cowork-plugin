@@ -27,9 +27,14 @@ apologizing. In order of value:
    *them* specifically and the thread has gone quiet on their side. A thread
    where anyone on a list could answer doesn't count. If nothing qualifies,
    fall back to what's unread and recent, clearly labeled as such.
-4. **Work folders** — files modified in the last day or two in the fenced
+4. **Overnight work** — anything that ran unattended since yesterday:
+   `list_schedules` for what fired, and scheduled/background results are
+   indexed into memory, so `memory_recall` surfaces what a run produced.
+   Something finished while the operator slept belongs on the page; a run
+   that failed belongs higher.
+5. **Work folders** — files modified in the last day or two in the fenced
    folders: yesterday's deliverables are today's follow-ups.
-5. **Notes / tasks** — anything explicitly marked for today.
+6. **Notes / tasks** — anything explicitly marked for today.
 
 Budget the calls: one pass per source, no fishing expeditions. A brief that
 takes ten minutes to gather has already failed its job.
