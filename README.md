@@ -40,3 +40,20 @@ Document skills expect the `execute_code` plugin to be enabled.
 python3 -m venv .venv && .venv/bin/pip install -r requirements-dev.txt ruff
 .venv/bin/pytest -q     # host-free
 ```
+
+## Evals
+
+`evals/tasks.json` holds live behavioral cases (ADR 0012): the document
+skills produce real files through `execute_code`, `/daily-brief` consults
+memory and renders an artifact — and is *not* volunteered for a plain
+calendar question — and a recurring ask round-trips through
+`schedule_task`/`cancel_schedule`. Run them from a protoAgent checkout
+against an instance that has the cowork stack installed (deps included):
+
+```
+python -m evals.runner --tasks-file /path/to/cowork-plugin/evals/tasks.json
+```
+
+Reports land in the checkout's `evals/results/`, model-tagged like the core
+suite, so `evals/report.py` trends them across runs. The host-free tests only
+guard the file's shape; the cases themselves need the live agent.
