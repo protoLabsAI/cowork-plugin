@@ -1,6 +1,6 @@
 id: cowork
 name: Cowork (knowledge-work skill pack)
-version: 0.2.3
+version: 0.3.0
 description: >-
   The skill pack behind protoAgent's Cowork archetype (ADR 0083): original,
   clean-room office-document skills (Word, Excel, PowerPoint, PDF) that produce
@@ -8,7 +8,10 @@ description: >-
   knowledge-work habits — a /daily-brief (schedule + waiting-on-you + ongoing
   work as a styled HTML artifact, schedulable on any cron), distill recurring
   work into scheduled tasks, consolidate memory, learn the operator's writing
-  voice, and a guided /setup-cowork onboarding. Ships skills only: no tools, routes, or surfaces.
+  voice, a /drop-folder habit (watch a fenced folder and process what lands
+  there, via the cowork:folder_changed watch verifier), and a guided
+  /setup-cowork onboarding. Ships skills plus that one verifier: no tools,
+  routes, or surfaces.
   Document skills require execute_code (bundled with the cowork-stack bundle)
   and the pip packages declared below (install via the console's
   install-deps action).
@@ -36,4 +39,4 @@ requires_pip:
 
 capabilities:
   network: []
-  filesystem: none
+  filesystem: scoped   # folder_changed verifier LISTS files (name/mtime/size, never contents) inside the operator's fenced work folders only

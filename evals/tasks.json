@@ -34,6 +34,14 @@
     "forbidden_tools": ["show_artifact"]
   },
   {
+    "id": "cowork_folder_watch_roundtrip",
+    "category": "cowork-habits",
+    "kind": "ask",
+    "name": "A drop-folder ask becomes a watch, read back, then cleaned up",
+    "prompt": "Whenever a new PDF lands in my work folder, I want a one-line summary of it. Set that up, tell me what you created, then remove it again — this was a drill.",
+    "expected_tools": ["create_watch", "clear_watch"]
+  },
+  {
     "id": "cowork_schedule_distill_roundtrip",
     "category": "cowork-habits",
     "kind": "ask",

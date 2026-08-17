@@ -36,5 +36,7 @@ def test_document_skill_deps_declared():
 
 
 def test_capabilities_are_honest():
+    # filesystem went none -> scoped in v0.3.0: the folder_changed verifier
+    # lists (never reads) files inside the operator's fenced work folders.
     caps = _manifest()["capabilities"]
-    assert caps["network"] == [] and caps["filesystem"] == "none"
+    assert caps["network"] == [] and caps["filesystem"] == "scoped"
