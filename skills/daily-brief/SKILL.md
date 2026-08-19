@@ -1,6 +1,6 @@
 ---
 name: daily-brief
-description: Compose the operator's daily brief — schedule, things waiting on them, ongoing work, and heads-ups — rendered as a polished HTML artifact, optionally on a recurring schedule. Run only when the operator explicitly asks for their brief (or /daily-brief), or when executing a scheduled brief task. An ordinary question about today's calendar is answered directly, not with a brief.
+description: Compose the operator's daily brief — schedule, things waiting on them, ongoing work, and heads-ups. LOAD THIS SKILL FIRST (load_skill) and deliver the brief as an HTML artifact via show_artifact — never as chat text. Run only when the operator explicitly asks for their brief (or /daily-brief), or when executing a scheduled brief task. An ordinary question about today's calendar is answered directly, not with a brief.
 user_facing: true
 slash: daily-brief
 ---
@@ -54,8 +54,11 @@ approaching deadline, a stale promise memory knows about).
 
 ## Render
 
-Build the page with `show_artifact(kind="html", ...)`, self-contained: system
-font stack, no external assets or network fetches, readable in light and dark.
+The brief IS the artifact — always deliver it with `show_artifact(kind="html",
+...)`, never as chat markdown, even on a light day (a light day gets a light
+page; the chat reply is one pointer line, "Your brief is in the panel").
+Self-contained: system font stack, no external assets or network fetches,
+readable in light and dark.
 Design it like a well-set newspaper front page, not a dashboard — a dated
 masthead, one strong opening line summarizing the day in plain words, clear
 sections, generous whitespace. Timestamps in the operator's timezone; every
